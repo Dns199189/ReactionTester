@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Tester</title>
+    <style>
+        #ci{
+           background-color: rgb(4, 125, 34);
+           height: 100px;
+           width: 100px;
+           position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reaction </h1>
+    <p>click on the box as sson as posible</p>
+    <div id="ci"></div>
+ 
+</body>
+<script>
+    var start= new Date().getTime();
+    function getRandomColor(){
+    var rgb1 = Math.floor((Math.random() * 255) + 1);
+    var rgb2 = Math.floor((Math.random() * 255) + 1);
+    var rgb3 = Math.floor((Math.random() * 255) + 1);
+    var rgb4 = Math.floor((Math.random() * 255) + 1);
+    return "rgb("+ rgb1 + "," +  rgb2 + "," + rgb3 +" , "+rgb4+")";   
+        
+    }
+   
+    function move(){
+        var left;
+        var right;
+        var top;
+        var bottom;
+        var wh;
+        right= Math.random()*300;
+        left= Math.random()*300;
+        top= Math.random()*300;
+        wh = ((Math.random()*400)+100)
+        document.getElementById('ci').style.left=left;
+        document.getElementById('ci').style.right=right;
+        document.getElementById('ci').style.top=top;
+        document.getElementById('ci').style.bottom=bottom;
+        document.getElementById('ci').style.width=wh;
+        document.getElementById('ci').style.height=wh;
+        document.getElementById('ci').style.display="block";
+        document.getElementById('ci').style.backgroundColor= Math.floor((Math.random() * 255) + 1); 
+        new Date().getTime();
+
+    }  
+    move();
+    start= new Date().getTime();
+    document.getElementById('ci').onclick =function(){
+        document.getElementById('ci').style.backgroundColor=Math.floor((Math.random() * 255) + 1);
+        var end= new Date().getTime();
+        var timeTaken=(end-start);
+        alert(timeTaken)
+        move();
+
+    }
+    
+</script>
+</html>
